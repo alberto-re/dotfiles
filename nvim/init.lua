@@ -50,3 +50,17 @@ vim.opt.listchars:append "eol:↴"
 require("indent_blankline").setup {
     show_end_of_line = true,
 }
+
+-- Completion
+
+local cmp = require'cmp'
+
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    ['<tab>'] = cmp.mapping.confirm({ select = true }),
+  }),
+})
+
+-- Clipboard
+
+vim.opt.clipboard = "unnamedplus"
