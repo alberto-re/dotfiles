@@ -64,3 +64,9 @@ cmp.setup({
 -- Clipboard
 
 vim.opt.clipboard = "unnamedplus"
+
+-- Statusline
+
+-- As stated in the lualine README to enable icons install a patched font
+-- like this for example: https://github.com/ryanoasis/nerd-fonts
+require('lualine').setup()

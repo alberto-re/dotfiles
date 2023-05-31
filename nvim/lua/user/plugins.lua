@@ -44,6 +44,11 @@ return packer.startup(function(use)
 
   use 'lukas-reineke/indent-blankline.nvim'
 
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
   use({ 'rose-pine/neovim', as = 'rose-pine' })
 
   use {
