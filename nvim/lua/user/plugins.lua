@@ -34,6 +34,14 @@ return packer.startup(function(use)
   -- My plugins here
   use 'wbthomason/packer.nvim' -- Have packer manage itself
 
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
+
   use 'lukas-reineke/indent-blankline.nvim'
 
   use({ 'rose-pine/neovim', as = 'rose-pine' })
