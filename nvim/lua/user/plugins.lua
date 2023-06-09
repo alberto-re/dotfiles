@@ -57,10 +57,6 @@ return packer.startup(function(use)
   }
 
   use {
-    'github/copilot.vim', branch = 'release'
-  }
-
-  use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     requires = {
