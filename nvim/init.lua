@@ -13,6 +13,10 @@ vim.g.mapleader = ' '
 -- Re-execute last execute command
 vim.keymap.set('n', '<leader>lc', ':!!<cr>', {})
 
+-- Make go to next / previous open buffer quickier
+vim.keymap.set('n', '<leader>n', ':bnext<cr>', {})
+vim.keymap.set('n', '<leader>b', ':bprev<cr>', {})
+
 require("user.plugins")
 
 -- LSP
