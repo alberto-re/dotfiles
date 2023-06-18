@@ -49,7 +49,7 @@ return packer.startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 
-	use({ "rose-pine/neovim", as = "rose-pine" })
+	use({ "EdenEast/nightfox.nvim", as = "nightfox" })
 
 	use({
 		"nvim-telescope/telescope.nvim",

@@ -42,7 +42,14 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 -- Theme
-vim.cmd("colorscheme rose-pine")
+
+require("nightfox").setup({
+  options = {
+    transparent = true
+  }
+});
+
+vim.cmd("colorscheme nightfox")
 
 -- Indent-blankline
 vim.opt.list = true
