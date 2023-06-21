@@ -68,6 +68,14 @@ cmp.setup({
 		["<C-n>"] = cmp.mapping.select_next_item(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 	}),
+  formatting = {
+    fields = {"abbr", "kind", "menu"},
+    format = require("lspkind").cmp_format({
+      mode = "symbol",
+      maxwidth = 50,
+      ellipsis_char = "...",
+    })
+  }
 })
 
 -- Clipboard

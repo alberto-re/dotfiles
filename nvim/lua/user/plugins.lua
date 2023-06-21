@@ -78,6 +78,8 @@ return packer.startup(function(use)
 		},
 	})
 
+	use({ "onsails/lspkind.nvim" })
+
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
