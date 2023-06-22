@@ -41,6 +41,12 @@ vim.keymap.set("n", "<leader>gl", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
+-- Diagnostics
+
+vim.diagnostic.config({ virtual_text = false })
+vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {})
+vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, {})
+
 -- Theme
 
 require("nightfox").setup({
