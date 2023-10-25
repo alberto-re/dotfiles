@@ -18,11 +18,7 @@ lsp.setup()
 
 -- Theme
 
-require("nightfox").setup({
-  options = {
-    transparent = true
-  }
-});
+require("nightfox").setup()
 
 vim.cmd("colorscheme nightfox")
 
