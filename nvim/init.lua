@@ -82,9 +82,11 @@ vim.keymap.set("n", "<leader>n", ":bnext<cr>", {})
 vim.keymap.set("n", "<leader>b", ":bprev<cr>", {})
 
 -- Reformat currently open buffer if LSP supports it
-vim.keymap.set('n', '<leader><space>', function()
+vim.keymap.set("n", "<leader><space>", function()
   vim.lsp.buf.format { async = true }
 end, {})
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
+vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, {})
 
 -- Searching
 local builtin = require("telescope.builtin")
