@@ -74,6 +74,9 @@ vim.opt.clipboard = "unnamedplus"
 -- Map <leader> to space: easy to reach with both hands
 vim.g.mapleader = " "
 
+-- By default ZZ saves and quit, and ZQ closes without saving.
+vim.keymap.set("n", "ZS", ":w<cr>", {})
+
 -- Re-execute last executed command
 vim.keymap.set("n", "<leader>lc", ":!!<cr>", {})
 
