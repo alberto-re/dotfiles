@@ -1,0 +1,7 @@
+[aws]
+disabled = true
+
+[cmd_duration]
+min_time = 0
+format = " took [$duration]($style)"
+show_milliseconds = true
