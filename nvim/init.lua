@@ -11,7 +11,21 @@ lsp.on_attach(function(client, bufnr)
 	lsp.default_keymaps({ buffer = bufnr })
 end)
 
--- (Optional) Configure lua language server for neovim
+require("lspconfig").rust_analyzer.setup {
+    settings = {
+        ["rust-analyzer"] = {
+            diagnostics = {
+                enable = true,
+                disabled = {
+                    "unresolved-proc-macro",
+                    "unresolved-macro-call",
+                },
+                enableExperimental = true,
+            },
+        }
+    }
+}
+
 require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
@@ -78,7 +92,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "ZS", ":w<cr>", {})
 
 -- Re-execute last executed command
-vim.keymap.set("n", "<leader>lc", ":!!<cr>", {})
+vim.keymap.set("n", "<leader>r", ":!!<cr>", {})
 
 -- Quickly move between next/previous open buffer
 vim.keymap.set("n", "<leader>n", ":bnext<cr>", {})
