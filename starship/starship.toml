@@ -1,6 +1,9 @@
 [aws]
 disabled = true
 
+[character]
+success_symbol = '[>](bold green)'
+
 [cmd_duration]
 min_time = 0
 format = " took [$duration]($style)"
