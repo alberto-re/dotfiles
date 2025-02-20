@@ -84,9 +84,6 @@ vim.opt.clipboard = "unnamedplus"
 -- Map <leader> to space: easy to reach with both hands
 vim.g.mapleader = " "
 
--- By default ZZ saves and quit, and ZQ closes without saving.
-vim.keymap.set("n", "ZS", ":w<cr>", {})
-
 -- Re-execute last executed command
 vim.keymap.set("n", "<leader>r", ":!!<cr>", {})
 
@@ -104,10 +101,29 @@ vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, {})
 -- Searching
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-vim.keymap.set("n", "<leader>fc", builtin.commands, {})
-vim.keymap.set("n", "<leader>fg", builtin.git_files, {})
-vim.keymap.set("n", "<leader>gs", builtin.grep_string, {})
 vim.keymap.set("n", "<leader>gl", builtin.live_grep, {})
+
+require("telescope").setup({
+    pickers = {
+        find_files = {
+            layout_config = {
+                prompt_position = "top",
+                width = 0.95,
+                height = 0.95,
+            },
+            sorting_strategy = "ascending",
+        },
+        live_grep = {
+            layout_config = {
+                prompt_position = "top",
+                width = 0.95,
+                height = 0.95,
+            },
+            sorting_strategy = "ascending",
+        },
+
+    },
+})
 
 -- Diagnostics
 vim.diagnostic.config({ virtual_text = false })
