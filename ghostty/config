@@ -1,0 +1,5 @@
+theme = "Rose Pine"
+font-family = "Hack Nerd Font Mono"
+font-size = 20
+background-opacity = 0.85
+background-blur-radius = 16
