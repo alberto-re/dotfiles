@@ -4,37 +4,9 @@
 
 require("user.plugins")
 
--- LSP
-local lsp = require("lsp-zero").preset({})
-
-lsp.on_attach(function(client, bufnr)
-	lsp.default_keymaps({ buffer = bufnr })
-end)
-
-require("lspconfig").rust_analyzer.setup {
-    settings = {
-        ["rust-analyzer"] = {
-            diagnostics = {
-                enable = true,
-                disabled = {
-                    "unresolved-proc-macro",
-                    "unresolved-macro-call",
-                },
-                enableExperimental = true,
-            },
-        }
-    }
-}
-
-require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
-
-lsp.setup()
-
 -- Theme
 
-require("nightfox").setup()
-
-vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme rose-pine")
 
 require("ibl").setup()
 
