@@ -1,5 +1,6 @@
 theme = "Rose Pine"
 font-family = "Hack Nerd Font Mono"
-font-size = 20
+font-size = 18
 background-opacity = 0.85
 background-blur-radius = 16
+term = xterm-256color
