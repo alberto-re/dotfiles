@@ -64,3 +64,4 @@ vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, {})
 -- Quality of life mappings.
 vim.keymap.set("n", "<Leader>w", "<CMD>w<CR>", { desc = "Save current file" })
 vim.keymap.set("n", "<Leader>q", "<CMD>q<CR>", { desc = "Quit current file" })
+vim.keymap.set("n", "<Leader>wq", "<CMD>wq<CR>", { desc = "Save current file then quit" })
