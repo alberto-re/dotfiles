@@ -2,7 +2,7 @@
 
 -- Get rid of annoying "Undefined global `vim`" warning due
 -- to lua_ls not recognizing where the variable comes from.
----@diagnostic disable: undefined-global 
+---@diagnostic disable: undefined-global
 
 -- Disable the use of a swapfile for the buffer.
 vim.opt.swapfile = false
@@ -27,24 +27,24 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Declare plugins to install.
 vim.pack.add({
+    { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/numToStr/Comment.nvim" },
     { src = "https://github.com/nvim-mini/mini.pick" },
     { src = "https://github.com/rose-pine/neovim" },
-    { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = "https://github.com/vladdoster/remember.nvim" },
 })
 
 -- Enable installed plugins.
 require("Comment").setup()
 require("mini.pick").setup()
-require("rose-pine").setup()
 require("remember")
+require("rose-pine").setup()
 
 -- Enable LSP for languages we care about.
 -- Run ':checkhealth vim.lsp' for diagnostics.
 -- LSP implementations must be installed manually.
-vim.lsp.enable("ruff")
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("ruff")
 
 -- Display LSP messages inline.
 vim.diagnostic.config({ virtual_text = true })
