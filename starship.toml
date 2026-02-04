@@ -1,12 +1,33 @@
-command_timeout = 60000
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$python\
+$rust\
+$zig\
+$vagrant\
+$status
+$character"""
 
-[aws]
-disabled = true
+[username]
+style_root = 'bold yellow'
+style_user = 'bold yellow'
+show_always = true
+format = '[$user@]($style)'
+
+[hostname]
+style = 'bold yellow'
+ssh_only = false
+format = '[$ssh_symbol$hostname]($style) '
+
+[git_branch]
+format = '[$branch(:$remote_branch)]($style) '
+
+[directory]
+fish_style_pwd_dir_length = 1
 
 [character]
 success_symbol = '[>](bold green)'
-
-[cmd_duration]
-min_time = 0
-format = " took [$duration]($style)"
-show_milliseconds = true
