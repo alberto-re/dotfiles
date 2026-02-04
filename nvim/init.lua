@@ -31,12 +31,14 @@ vim.pack.add({
     { src = "https://github.com/nvim-mini/mini.pick" },
     { src = "https://github.com/rose-pine/neovim" },
     { src = 'https://github.com/neovim/nvim-lspconfig' },
+    { src = "https://github.com/vladdoster/remember.nvim" },
 })
 
 -- Enable installed plugins.
 require("Comment").setup()
 require("mini.pick").setup()
 require("rose-pine").setup()
+require("remember")
 
 -- Enable LSP for languages we care about.
 -- Run ':checkhealth vim.lsp' for diagnostics.
