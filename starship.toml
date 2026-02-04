@@ -1,33 +1,61 @@
+# Palette and formats largely taken from:
+# https://github.com/rose-pine/starship/blob/main/rose-pine.toml
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
 $username\
-$hostname\
 $directory\
 $git_branch\
-$git_status\
 $nodejs\
 $python\
 $rust\
-$zig\
-$vagrant\
 $status
 $character"""
 
+palette = "rose-pine"
+
+[palettes.rose-pine]
+overlay = '#26233a'
+rose = '#ebbcba'
+pine = '#31748f'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
+
 [username]
-style_root = 'bold yellow'
-style_user = 'bold yellow'
+disabled = false
+format = "[](fg:overlay)[\ue0cf $user]($style)[](fg:overlay) "
 show_always = true
-format = '[$user@]($style)'
-
-[hostname]
-style = 'bold yellow'
-ssh_only = false
-format = '[$ssh_symbol$hostname]($style) '
-
-[git_branch]
-format = '[$branch(:$remote_branch)]($style) '
+style_root = "bg:overlay fg:foam"
+style_user = "bg:overlay fg:foam"
 
 [directory]
+format = "[](fg:overlay)[$path]($style)[](fg:overlay) "
+style = "bg:overlay fg:iris"
 fish_style_pwd_dir_length = 1
 
+[git_branch]
+format = "[](fg:overlay)[$symbol $branch]($style)[](fg:overlay)"
+style = "bg:overlay fg:rose"
+symbol = ""
+
+[nodejs]
+style = "bg:overlay fg:pine"
+format = " [](fg:overlay)[$symbol$version]($style)[](fg:overlay)"
+disabled = false
+symbol = "󰎙 "
+
+[python]
+style = "bg:overlay fg:pine"
+format = " [](fg:overlay)[$symbol$version]($style)[](fg:overlay)"
+disabled = false
+symbol = ' '
+
+[rust]
+style = "bg:overlay fg:pine"
+format = " [](fg:overlay)[$symbol$version]($style)[](fg:overlay)"
+disabled = false
+symbol = " "
+
 [character]
-success_symbol = '[>](bold green)'
+success_symbol = '[ 󱞪](fg:foam)'
+error_symbol = '[ 󱞪](fg:rose)'
