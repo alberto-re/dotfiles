@@ -47,7 +47,12 @@ vim.lsp.enable("lua_ls")
 vim.lsp.enable("ruff")
 
 -- Display LSP messages inline.
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({
+    -- Display LSP diagnostics inline.
+    virtual_text = true,
+    -- Only update diagnostics after leaving insert mode.
+    update_in_insert = false,
+})
 
 -- Set color theme.
 vim.cmd("colorscheme rose-pine")
