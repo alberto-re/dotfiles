@@ -36,7 +36,14 @@ vim.pack.add({
 
 -- Enable installed plugins.
 require("Comment").setup()
-require("mini.pick").setup()
+require("mini.pick").setup({
+  window = {
+    config = {
+      width = 120,
+      height = 30,
+    },
+  },
+})
 require("remember")
 require("rose-pine").setup()
 
