@@ -64,15 +64,17 @@ vim.diagnostic.config({
 -- Set color theme.
 vim.cmd("colorscheme rose-pine")
 
+-- Keyboard mappings.
 -- Map <leader> to spacebar.
 vim.g.mapleader = " "
 
--- Leader mappings.
--- Mappings for 'mini.pick'.
+-- Search in files.
 vim.keymap.set("n", "<Leader>ff", "<Cmd>Pick files<CR>", { desc = "Search files" })
-vim.keymap.set("n", "<Leader>fb", "<Cmd>Pick buffers<CR>", { desc = "Search buffers" })
-vim.keymap.set("n", "<Leader>gf", "<Cmd>Pick grep_live<CR>", { desc = "Grep files" })
-vim.keymap.set("n", "<Leader>gc", "<Cmd>Pick grep pattern='<cword>'<CR>", { desc = "Grep current word" })
+vim.keymap.set("n", "<Leader>fg", "<Cmd>Pick grep_live<CR>", { desc = "Grep files" })
+-- Move between buffers.
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<Leader>bs", "<Cmd>Pick buffers<CR>", { desc = "Search buffers" })
 -- Mappings for Language Server Protocol.
 vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, {})
 -- Quality of life mappings.
