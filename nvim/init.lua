@@ -29,21 +29,16 @@ vim.opt.clipboard = "unnamedplus"
 vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/numToStr/Comment.nvim" },
-    { src = "https://github.com/nvim-mini/mini.pick" },
+    { src = "https://github.com/nvim-mini/mini.icons" },
+    { src = "https://github.com/ibhagwan/fzf-lua" },
     { src = "https://github.com/rose-pine/neovim" },
     { src = "https://github.com/vladdoster/remember.nvim" },
 })
 
 -- Enable installed plugins.
 require("Comment").setup()
-require("mini.pick").setup({
-  window = {
-    config = {
-      width = 120,
-      height = 30,
-    },
-  },
-})
+require('mini.icons').setup()
+require("fzf-lua")
 require("remember")
 require("rose-pine").setup()
 
@@ -69,12 +64,13 @@ vim.cmd("colorscheme rose-pine")
 vim.g.mapleader = " "
 
 -- Search in files.
-vim.keymap.set("n", "<Leader>ff", "<Cmd>Pick files<CR>", { desc = "Search files" })
-vim.keymap.set("n", "<Leader>fg", "<Cmd>Pick grep_live<CR>", { desc = "Grep files" })
+vim.keymap.set("n", "<Leader>ff", "<Cmd>FzfLua files<CR>", { desc = "Search files" })
+vim.keymap.set("n", "<Leader>gl", "<Cmd>FzfLua live_grep<CR>", { desc = "Grep files" })
+vim.keymap.set("n", "<Leader>gcw", "<Cmd>FzfLua grep_cword<CR>", { desc = "Grep word under cursor" })
 -- Move between buffers.
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
-vim.keymap.set("n", "<Leader>bs", "<Cmd>Pick buffers<CR>", { desc = "Search buffers" })
+vim.keymap.set("n", "<Leader>bs", "<Cmd>FzfLua buffers<CR>", { desc = "Search buffers" })
 -- Mappings for Language Server Protocol.
 vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, {})
 -- Quality of life mappings.
