@@ -13,6 +13,7 @@ $status
 $character"""
 
 palette = "rose-pine"
+command_timeout = 2000
 
 [palettes.rose-pine]
 overlay = '#26233a'
