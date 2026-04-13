@@ -28,7 +28,7 @@ vim.opt.clipboard = "unnamedplus"
 -- Declare plugins to install.
 vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
-    { src = "https://github.com/numToStr/Comment.nvim" },
+    { src = "https://github.com/nvim-mini/mini.comment" },
     { src = "https://github.com/nvim-mini/mini.icons" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
     { src = "https://github.com/rose-pine/neovim" },
@@ -36,7 +36,7 @@ vim.pack.add({
 })
 
 -- Enable installed plugins.
-require("Comment").setup()
+require("mini.comment").setup()
 require('mini.icons').setup()
 require("fzf-lua")
 require("remember")
