@@ -38,7 +38,29 @@ vim.pack.add({
 -- Enable installed plugins.
 require("mini.comment").setup()
 require('mini.icons').setup()
-require("fzf-lua")
+require("fzf-lua").setup({
+  files = {
+    fd_opts = "--no-ignore --hidden"
+      .. " --exclude .git"
+      .. " --exclude node_modules"
+      .. " --exclude __pycache__"
+      .. " --exclude .mypy_cache"
+      .. " --exclude .venv"
+      .. " --exclude .ruff_cache"
+      .. " --exclude .pytest_cache",
+  },
+  grep = {
+    rg_opts = "--line-number --column --no-heading --color=always --smart-case"
+      .. " --no-ignore-vcs --no-ignore-dot --hidden"
+      .. " --glob '!.git'"
+      .. " --glob '!node_modules'"
+      .. " --glob '!__pycache__'"
+      .. " --glob '!.mypy_cache'"
+      .. " --glob '!.venv'"
+      .. " --glob '!.ruff_cache'"
+      .. " --glob '!.pytest_cache'",
+  },
+})
 require("remember")
 require("rose-pine").setup()
 
