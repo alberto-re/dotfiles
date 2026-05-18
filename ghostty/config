@@ -1,6 +1,6 @@
-theme = "Rose Pine"
-font-family = "Hack Nerd Font Mono"
-font-size = 18
+theme = Catppuccin Mocha
+font-family = JetBrains Mono
+font-size = 20
 term = xterm-256color
 window-width = 120
 window-height = 35
