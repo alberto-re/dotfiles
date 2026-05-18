@@ -31,7 +31,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-mini/mini.comment" },
     { src = "https://github.com/nvim-mini/mini.icons" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
-    { src = "https://github.com/rose-pine/neovim" },
+    { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
     { src = "https://github.com/vladdoster/remember.nvim" },
 })
 
@@ -62,7 +62,7 @@ require("fzf-lua").setup({
   },
 })
 require("remember")
-require("rose-pine").setup()
+require("catppuccin").setup({ flavour = "mocha" })
 
 -- Enable LSP for languages we care about.
 -- Run ':checkhealth vim.lsp' for diagnostics.
@@ -79,7 +79,7 @@ vim.diagnostic.config({
 })
 
 -- Set color theme.
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme catppuccin-nvim")
 
 -- Keyboard mappings.
 -- Map <leader> to spacebar.
