@@ -95,7 +95,3 @@ vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" }
 vim.keymap.set("n", "<Leader>bs", "<Cmd>FzfLua buffers<CR>", { desc = "Search buffers" })
 -- Mappings for Language Server Protocol.
 vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, {})
--- Quality of life mappings.
-vim.keymap.set("n", "<Leader>w", "<CMD>w<CR>", { desc = "Save current file" })
-vim.keymap.set("n", "<Leader>q", "<CMD>q<CR>", { desc = "Quit current file" })
-vim.keymap.set("n", "<Leader>wq", "<CMD>wq<CR>", { desc = "Save current file then quit" })
