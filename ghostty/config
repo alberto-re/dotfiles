@@ -1,4 +1,4 @@
-theme = Catppuccin Mocha
+theme = Nord
 font-family = JetBrains Mono
 font-size = 20
 term = xterm-256color
