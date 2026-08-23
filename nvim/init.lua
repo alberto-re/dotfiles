@@ -39,27 +39,27 @@ vim.pack.add({
 require("mini.comment").setup()
 require('mini.icons').setup()
 require("fzf-lua").setup({
-  files = {
-    fd_opts = "--no-ignore --hidden"
-      .. " --exclude .git"
-      .. " --exclude node_modules"
-      .. " --exclude __pycache__"
-      .. " --exclude .mypy_cache"
-      .. " --exclude .venv"
-      .. " --exclude .ruff_cache"
-      .. " --exclude .pytest_cache",
-  },
-  grep = {
-    rg_opts = "--line-number --column --no-heading --color=always --smart-case"
-      .. " --no-ignore-vcs --no-ignore-dot --hidden"
-      .. " --glob '!.git'"
-      .. " --glob '!node_modules'"
-      .. " --glob '!__pycache__'"
-      .. " --glob '!.mypy_cache'"
-      .. " --glob '!.venv'"
-      .. " --glob '!.ruff_cache'"
-      .. " --glob '!.pytest_cache'",
-  },
+    files = {
+        fd_opts = "--no-ignore --hidden"
+            .. " --exclude .git"
+            .. " --exclude node_modules"
+            .. " --exclude __pycache__"
+            .. " --exclude .mypy_cache"
+            .. " --exclude .venv"
+            .. " --exclude .ruff_cache"
+            .. " --exclude .pytest_cache",
+    },
+    grep = {
+        rg_opts = "--line-number --column --no-heading --color=always --smart-case"
+            .. " --no-ignore-vcs --no-ignore-dot --hidden"
+            .. " --glob '!.git'"
+            .. " --glob '!node_modules'"
+            .. " --glob '!__pycache__'"
+            .. " --glob '!.mypy_cache'"
+            .. " --glob '!.venv'"
+            .. " --glob '!.ruff_cache'"
+            .. " --glob '!.pytest_cache'",
+    },
 })
 require("remember")
 require("nord")
@@ -94,4 +94,12 @@ vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<Leader>bs", "<Cmd>FzfLua buffers<CR>", { desc = "Search buffers" })
 -- Mappings for Language Server Protocol.
-vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, {})
+vim.keymap.set("n", "<Leader>lf", function()
+    vim.lsp.buf.code_action({
+        context = { only = { "source.fixAll.ruff" } },
+        apply = true,
+    })
+    vim.defer_fn(function()
+        vim.lsp.buf.format({ async = false })
+    end, 100)
+end, { desc = "LSP: organize imports + format" })
