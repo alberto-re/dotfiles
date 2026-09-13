@@ -33,6 +33,7 @@ vim.pack.add({
     { src = "https://github.com/ibhagwan/fzf-lua" },
     { src = "https://github.com/shaunsingh/nord.nvim" },
     { src = "https://github.com/vladdoster/remember.nvim" },
+    { src = "https://github.com/akinsho/bufferline.nvim" },
 })
 
 -- Enable installed plugins.
@@ -63,6 +64,7 @@ require("fzf-lua").setup({
 })
 require("remember")
 require("nord")
+require("bufferline").setup()
 
 -- Enable LSP for languages we care about.
 -- Run ':checkhealth vim.lsp' for diagnostics.
