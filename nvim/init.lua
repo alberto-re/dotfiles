@@ -31,7 +31,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-mini/mini.comment" },
     { src = "https://github.com/nvim-mini/mini.icons" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
-    { src = "https://github.com/shaunsingh/nord.nvim" },
+    { src = "https://github.com/folke/tokyonight.nvim" },
     { src = "https://github.com/vladdoster/remember.nvim" },
     { src = "https://github.com/akinsho/bufferline.nvim" },
 })
@@ -63,7 +63,7 @@ require("fzf-lua").setup({
     },
 })
 require("remember")
-require("nord")
+require("tokyonight")
 require("bufferline").setup()
 
 -- Enable LSP for languages we care about.
@@ -81,7 +81,7 @@ vim.diagnostic.config({
 })
 
 -- Set color theme.
-vim.cmd("colorscheme nord")
+vim.cmd("colorscheme tokyonight-moon")
 
 -- Keyboard mappings.
 -- Map <leader> to spacebar.
