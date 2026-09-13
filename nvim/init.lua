@@ -24,6 +24,8 @@ vim.opt.winborder = "rounded"
 vim.opt.scrolloff = 10
 -- Sync with system clipboard.
 vim.opt.clipboard = "unnamedplus"
+-- Enable highlighting of the current line
+vim.opt.cursorline = true
 
 -- Declare plugins to install.
 vim.pack.add({
