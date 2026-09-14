@@ -37,6 +37,7 @@ vim.pack.add({
     { src = "https://github.com/vladdoster/remember.nvim" },
     { src = "https://github.com/akinsho/bufferline.nvim" },
     { src = "https://github.com/nvim-mini/mini.pairs" },
+    { src = "https://github.com/nvim-lualine/lualine.nvim" },
 })
 
 -- Enable installed plugins.
@@ -64,6 +65,7 @@ require("fzf-lua").setup({
             .. " --glob '!.pytest_cache'",
     },
 })
+require("lualine").setup()
 require("mini.comment").setup()
 require('mini.icons').setup()
 require("mini.pairs").setup()
