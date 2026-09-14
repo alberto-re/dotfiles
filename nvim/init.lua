@@ -36,11 +36,11 @@ vim.pack.add({
     { src = "https://github.com/folke/tokyonight.nvim" },
     { src = "https://github.com/vladdoster/remember.nvim" },
     { src = "https://github.com/akinsho/bufferline.nvim" },
+    { src = "https://github.com/nvim-mini/mini.pairs" },
 })
 
 -- Enable installed plugins.
-require("mini.comment").setup()
-require('mini.icons').setup()
+require("bufferline").setup()
 require("fzf-lua").setup({
     files = {
         fd_opts = "--no-ignore --hidden"
@@ -64,9 +64,11 @@ require("fzf-lua").setup({
             .. " --glob '!.pytest_cache'",
     },
 })
+require("mini.comment").setup()
+require('mini.icons').setup()
+require("mini.pairs").setup()
 require("remember")
 require("tokyonight")
-require("bufferline").setup()
 
 -- Enable LSP for languages we care about.
 -- Run ':checkhealth vim.lsp' for diagnostics.
