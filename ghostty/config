@@ -1,7 +1,7 @@
 theme = Nord
 font-family = JetBrains Mono
-font-size = 20
+font-size = 16
 term = xterm-256color
-window-width = 120
-window-height = 35
+window-width = 100
+window-height = 30
 copy-on-select = clipboard
