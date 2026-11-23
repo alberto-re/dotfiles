@@ -1,15 +1,8 @@
-# Palette and formats largely taken from:
-# https://github.com/rose-pine/starship/blob/main/rose-pine.toml
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
 $username\
 $directory\
-$git_branch\
-$nodejs\
-$python\
-$rust\
-$status
 $character"""
 
 command_timeout = 2000
@@ -20,18 +13,3 @@ show_always = true
 
 [directory]
 fish_style_pwd_dir_length = 1
-
-[git_branch]
-symbol = " "
-
-[nodejs]
-disabled = false
-symbol = "󰎙 "
-
-[python]
-disabled = false
-symbol = " "
-
-[rust]
-disabled = false
-symbol = " "
